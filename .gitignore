@@ -1,0 +1,32 @@
+# Arduino / PlatformIO build artifacts
+*.hex
+*.bin
+*.elf
+*.o
+*.d
+.build/
+build/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.bak
+
+# Temporary / OS files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+
+# Archive and Executables
+*.rar
+*.zip
+*.7z
+*.tar.gz
+*.exe
+
+# Residual directories
+BAILAM/
+Thingboard/
