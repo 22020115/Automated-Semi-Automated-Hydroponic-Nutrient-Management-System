@@ -7,7 +7,7 @@
 
 ---
 
-## 📌 1. Giới thiệu tổng quan
+## 1. Giới thiệu tổng quan
 
 Trong canh tác nông nghiệp công nghệ cao và thủy canh, hai chỉ số quan trọng quyết định sự phát triển của cây trồng là:
 * **Độ pH:** Ảnh hưởng trực tiếp đến khả năng hấp thụ dinh dưỡng của rễ cây (ngưỡng tối ưu thường từ `5.5 - 6.5`).
@@ -19,7 +19,7 @@ Dự án này xây dựng một hệ thống nhúng dựa trên vi điều khi�
 
 ---
 
-## ⚠️ 2. Lưu ý kỹ thuật & Hiệu chuẩn cảm biến (Calibration Note)
+## 2. Lưu ý kỹ thuật & Hiệu chuẩn cảm biến (Calibration Note)
 
 > [!IMPORTANT]
 > **Ghi chú về độ chính xác của cảm biến:**  
@@ -31,7 +31,7 @@ Dự án này xây dựng một hệ thống nhúng dựa trên vi điều khi�
 
 ---
 
-## 🛠️ 3. Kiến trúc phần cứng & Sơ đồ đấu nối
+##  3. Kiến trúc phần cứng & Sơ đồ đấu nối
 
 Do vi điều khiển ESP8266 chỉ sở hữu **duy nhất 01 chân Analog (A0)**, mạch sử dụng IC dồn kênh analog **CD4051 (8-to-1 Multiplexer)** để đọc luân phiên nhiều cảm biến analog:
 
@@ -60,7 +60,7 @@ Do vi điều khiển ESP8266 chỉ sở hữu **duy nhất 01 chân Analog (A0)
 
 ---
 
-## 🧠 4. Thuật toán lọc nhiễu Kalman (1D Kalman Filter)
+## 4. Thuật toán lọc nhiễu Kalman (1D Kalman Filter)
 
 Tín hiệu analog từ cảm biến pH và EC trong môi trường nước có động cơ máy bơm thường xuất hiện nhiều xung nhiễu (noise) do rung động và cảm ứng điện từ. Hệ thống nhúng một bộ lọc Kalman 1 chiều đơn giản trực tiếp trên vi điều khiển:
 
@@ -74,7 +74,7 @@ $$P_k = (1 - K) \cdot P_{k-1} + | \hat{x}_k - z_k | \cdot Q$$
 
 ---
 
-## ⚙️ 5. Logic điều khiển: Tự động kết hợp Bán tự động
+## 5. Logic điều khiển: Tự động kết hợp Bán tự động
 
 ### 5.1. Chế độ tự động (Auto Mode)
 * **Kích hoạt Relay 1:** Khi `pH < 5.5` hoặc `EC < 0.8 mS/cm` (nước bị chua hoặc thiếu dưỡng chất), hệ thống đóng Relay 1 để bơm dung dịch dinh dưỡng.
@@ -90,7 +90,7 @@ $$P_k = (1 - K) \cdot P_{k-1} + | \hat{x}_k - z_k | \cdot Q$$
 
 ---
 
-## 📁 6. Cấu trúc thư mục
+## 6. Cấu trúc thư mục
 
 ```text
 .
@@ -116,7 +116,7 @@ $$P_k = (1 - K) \cdot P_{k-1} + | \hat{x}_k - z_k | \cdot Q$$
 
 ---
 
-## 🚀 7. Hướng dẫn nạp mã nguồn
+## 7. Hướng dẫn nạp mã nguồn
 
 1. Cài đặt **Arduino IDE** (phiên bản 1.8.x hoặc 2.x).
 2. Thêm bo mạch ESP8266 vào Arduino IDE thông qua `Board Manager`:
